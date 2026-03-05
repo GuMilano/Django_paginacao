@@ -1,3 +1,10 @@
-from django.shortcuts import render
+from django.views.generic import ListView
 
-# Create your views here.
+from .models import Produto
+
+class IndexListView(ListView):
+    model = Produto
+    template_name = 'index.html'
+    model = Produto
+    paginate_by = 2
+    ordering = 'id'
